@@ -14,8 +14,15 @@
 
 <body class="flex items-center justify-center w-screen h-screen overflow-hidden bg-gray-800">
 
-  <section class="absolute top-0 right-0 flex flex-col gap-4 m-4 ">
-    <dialog open class="relative flex items-center gap-4 p-4 text-gray-200 bg-gray-900 shadow-lg rounded-3xl w-80">
+  <section id="toast-notification-container" class="absolute top-0 right-0 flex flex-col gap-4 m-4 ">
+  </section>
+
+
+  <button id="show-notification-button" class="p-3 font-semibold text-gray-800 bg-green-300 rounded-full">Mostrar notificação</button>
+</body>
+
+ <template id="toast-notification-component">
+  <dialog open class="relative flex items-center gap-4 p-4 text-gray-200 bg-gray-900 shadow-lg rounded-3xl w-80">
       <section class="flex items-center gap-4">
         <div class="bg-gray-800 rounded-full w-14">
           <img class="rounded-full h-14 w-14" src="https://i.pravatar.cc/56" alt="user avatar">
@@ -30,10 +37,6 @@
         <button class="text-lg font-semibold text-green-300">Close</button>
       </form>
     </dialog>
-  </section>
-
-
-  <button class="p-3 font-semibold text-gray-800 bg-green-300 rounded-full">Mostrar notificação</button>
-</body>
+ </template>
 
 </html>
