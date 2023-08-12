@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Toast Notifications</title>
+  <link rel="stylesheet" href="dist/output.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <script src="/src/index.js"></script>
+
 </head>
-<body>
-  
+
+<body class="w-screen h-screen bg-gray-800 flex items-center justify-center overflow-hidden">
+
+  <section class="absolute right-0 top-0 m-4 flex flex-col gap-4 ">
+    <dialog open class="relative rounded-3xl bg-gray-900 text-gray-200 p-4 flex items-center gap-4 shadow-lg w-72">
+      <section class="flex gap-4 items-center">
+        <img class="h-14 w-14 rounded-full" src="https://i.pravatar.cc/56" alt="user avatar">
+        <div class="w-28">
+          <h3 class="font-semibold">João gripado</h3>
+          <p class="text-sm text-ellipsis overflow-hidden line-clamp-1"> lorem ipslum aehiahdkjashdkajhsdaksjdhaksjdasdasdasdasdasdas sdadadadadadasdasdasdasd</p>
+        </div>
+      </section>
+      <div class="bg-gray-700 w-[1px] h-16"></div>
+      <form method="dialog">
+        <button class="text-green-300 font-semibold text-lg">Close</button>
+      </form>
+    </dialog>
+  </section>
+
+
+  <button class="bg-green-300 text-gray-800 p-3 rounded-full font-semibold">Mostrar notificação</button>
 </body>
+
 </html>
