@@ -3,13 +3,14 @@ window.onload = () => {
   const notificationTemplate = document.querySelector("#notification");
   const notificationContainer = document.getElementById("toast-notification-container");
   const showNotificationButton = document.getElementById("show-notification-button");
+  const notificationSound = new Audio('/sound/notification.mp3')
 
-  
+
 
   showNotificationButton.addEventListener("click", () => {
     // insert a new toast notification
     const newNotification = notificationTemplate.content.cloneNode(true);
-    
+
     // variable which defines the if for the new dialog notification
     const newDialogId = `notification-${Date.now()}`;
 
@@ -18,18 +19,22 @@ window.onload = () => {
     notificationDialog.id = newDialogId
     // adds a remove event on the notification when the button Close is clicked
     notificationDialog.addEventListener("close", (event) => {
-      event.target.remove()
+      setTimeout(() => {
+        event.target.remove()
+      }, 700)
     })
 
     // insert the new toast notification in the DOM
     notificationContainer.appendChild(newNotification)
+    // play sound notification
+    notificationSound.play()
 
     // when the toast are created, after 4 seconds, it's automatically removed from DOM
     setTimeout(() => {
       const dialogToClose = document.getElementById(newDialogId)
       if (dialogToClose) {
-        dialogToClose.remove()
+        dialogToClose.close()
       }
-    },1000)
+    }, 4000)
   })
 }
